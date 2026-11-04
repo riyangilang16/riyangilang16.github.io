@@ -1,23 +1,764 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Riyan Gilang</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 80px 20px;
-            background-color: #f4f7f6;
-            color: #333;
+    <title>JasaDigital - Solusi Perangkat Lunak & Sistem Informasi Pendidikan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans & Fredoka -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
         }
-        h1 { color: #2c3e50; }
-        p { font-size: 1.2rem; color: #666; }
+    </script>
+    <style>
+        .custom-shape-divider-bottom-168 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .custom-shape-divider-bottom-168 svg {
+            position: relative;
+            display: block;
+            width: calc(130% + 1.3px);
+            height: 50px;
+        }
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
     </style>
 </head>
-<body>
-    <h1>Selamat Datang di Landing Page Saya</h1>
-    <p>Halaman ini disituskan menggunakan GitHub Pages.</p>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- CONFIGURATION SCRIPT -->
+    <script>
+        const WA_NUMBER = "6285814565300";
+        const DEVELOPER_NAME = "Riyan Gilang Pratama";
+        const SYSTEM_VERSION = "1.0.0.a";
+    </script>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative bg-gradient-to-tr from-brand-600 to-indigo-600 text-white p-2.5 rounded-2xl shadow-md shadow-blue-500/20 group-hover:scale-105 transition transform">
+                    <svg class="w-8 h-8 fill-current" viewBox="0 0 64 64">
+                        <path d="M32 4C18.7 4 8 14.7 8 28c0 7.2 3.2 13.7 8.3 18.1C18 53.2 24.5 60 32 60s14-6.8 15.7-13.9C52.8 41.7 56 35.2 56 28 56 14.7 45.3 4 32 4z" fill="#3b82f6"/>
+                        <path d="M32 2L4 16l28 14 28-14L32 2z" fill="#1e293b"/>
+                        <polygon points="32,2 52,12 32,22 12,12" fill="#334155"/>
+                        <rect x="50" y="14" width="3" height="12" fill="#fbbf24"/>
+                        <circle cx="51.5" cy="27.5" r="2.5" fill="#fbbf24"/>
+                        <circle cx="23" cy="28" r="8" fill="#ffffff"/>
+                        <circle cx="41" cy="28" r="8" fill="#ffffff"/>
+                        <circle cx="23" cy="28" r="4" fill="#0f172a"/>
+                        <circle cx="41" cy="28" r="4" fill="#0f172a"/>
+                        <polygon points="32,32 28,37 36,37" fill="#fbbf24"/>
+                    </svg>
+                    <span class="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+                    </span>
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="text-2xl font-display font-bold tracking-tight text-slate-900">Jasa<span class="text-brand-600">Digital</span></span>
+                        <span class="text-[10px] font-bold font-mono bg-blue-100 text-brand-700 px-2 py-0.5 rounded-full">v1.0.0.a</span>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">Solusi Edukasi Digital &bull; Riyan Gilang Pratama</p>
+                </div>
+            </a>
+            
+            <!-- Nav Links -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                <a href="#paket-bundling" class="text-emerald-600 font-bold hover:text-emerald-700 transition flex items-center gap-1.5"><i class="fa-solid fa-box-open text-amber-500"></i> Paket 2.5 Juta</a>
+                <a href="#katalog" class="hover:text-brand-600 transition flex items-center gap-1.5"><i class="fa-solid fa-shapes text-brand-500"></i> Katalog Sistem</a>
+                <a href="#request-custom" class="hover:text-brand-600 transition flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i> Custom Web</a>
+                <a href="#faq" class="hover:text-brand-600 transition flex items-center gap-1.5"><i class="fa-solid fa-circle-question text-purple-500"></i> FAQ</a>
+            </nav>
+
+            <!-- CTA WA Navbar -->
+            <div class="flex items-center gap-3">
+                <a id="btn-nav-wa" href="#" target="_blank" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 shadow-md shadow-emerald-500/20 transition transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span class="hidden sm:inline">Hubungi Pengembang</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-brand-900 to-slate-900 text-white pt-16 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute top-10 left-10 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Hero Text -->
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/10 backdrop-blur-md text-amber-300 border border-white/10 mb-6 shadow-inner">
+                    <i class="fa-solid fa-tag text-amber-400"></i> Promo Terjangkau: Mulai Rp 500 Ribu / Sistem
+                </div>
+                <h1 class="font-display text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-6 text-white">
+                    Digitalkan Sekolah Anda dengan <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-emerald-300 to-sky-300">Sistem Handal & Siap Pakai</span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Sistem sekolah siap pakai tanpa biaya lisensi bulanan. Dapatkan full source code, panduan instalasi, dan bantuan setup gratis dari developer langsung.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#paket-bundling" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base shadow-xl shadow-emerald-500/20 transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-gift"></i> Paket Complete (Rp 2.500.000)
+                    </a>
+                    <a href="#katalog" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-7 py-3.5 rounded-2xl font-bold text-sm sm:text-base backdrop-blur-md transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-store"></i> Lihat Sistem Satuan
+                    </a>
+                </div>
+
+                <!-- Stats Badges -->
+                <div class="mt-10 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                    <div>
+                        <p class="font-display text-2xl font-bold text-emerald-400">< Rp 800rb</p>
+                        <p class="text-xs text-slate-400 font-medium">Harga per Aplikasi</p>
+                    </div>
+                    <div>
+                        <p class="font-display text-2xl font-bold text-amber-300">100%</p>
+                        <p class="text-xs text-slate-400 font-medium">Full Source Code</p>
+                    </div>
+                    <div>
+                        <p class="font-display text-2xl font-bold text-sky-400">Gratis</p>
+                        <p class="text-xs text-slate-400 font-medium">Pendampingan Setup</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Mascot Card -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-amber-400 via-emerald-400 to-brand-500 rounded-3xl blur-lg opacity-40 animate-pulse"></div>
+                    
+                    <div class="relative bg-slate-800/90 border border-slate-700/80 backdrop-blur-xl p-6 sm:p-8 rounded-3xl shadow-2xl text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4 bg-gradient-to-tr from-brand-500 to-indigo-600 rounded-full p-1.5 shadow-xl animate-float">
+                            <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center overflow-hidden relative">
+                                <svg class="w-24 h-24" viewBox="0 0 64 64">
+                                    <circle cx="32" cy="32" r="28" fill="#1e293b"/>
+                                    <path d="M32 8C20 8 12 18 12 30c0 6 2.5 11.5 6.5 15C20 49 25 54 32 54s12-5 13.5-9c4-3.5 6.5-9 6.5-15 0-12-8-22-20-22z" fill="#3b82f6"/>
+                                    <path d="M32 4L8 16l24 12 24-12L32 4z" fill="#fbbf24"/>
+                                    <rect x="46" y="15" width="2" height="10" fill="#ffffff"/>
+                                    <circle cx="47" cy="27" r="2" fill="#ffffff"/>
+                                    <circle cx="24" cy="28" r="7" stroke="#ffffff" stroke-width="2" fill="#0f172a"/>
+                                    <circle cx="40" cy="28" r="7" stroke="#ffffff" stroke-width="2" fill="#0f172a"/>
+                                    <line x1="31" y1="28" x2="33" y2="28" stroke="#ffffff" stroke-width="2"/>
+                                    <circle cx="23" cy="27" r="2.5" fill="#ffffff"/>
+                                    <circle cx="39" cy="27" r="2.5" fill="#ffffff"/>
+                                    <polygon points="32,32 29,36 35,36" fill="#fbbf24"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <h3 class="font-display text-xl font-bold text-white mb-1">Halo! Saya Professor Kode</h3>
+                        <p class="text-xs text-amber-300 font-semibold mb-3">Karakter Maskot Resmi JasaDigital</p>
+                        <div class="bg-slate-900/80 rounded-2xl p-4 border border-slate-700/50 text-left text-xs text-slate-300 space-y-2.5">
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span><strong>Tanpa Biaya Lisensi:</strong> Bayar 1x untuk selamanya.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span><strong>Developer:</strong> Dibuat oleh <strong>Riyan Gilang Pratama</strong>.</span>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-emerald-400 mt-0.5"></i>
+                                <span><strong>Paket Bundling 2.5 Juta:</strong> Dapatkan 5 aplikasi sekaligus!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-shape-divider-bottom-168">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.92,130.83,121.31,200,110.87,241.6,104.59,282.26,84.77,321.39,56.44Z" fill="#f8fafc"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- PROMO BUNDLING CARD SECTION (Rp 2.500.000) -->
+    <section id="paket-bundling" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="relative bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 rounded-3xl p-8 sm:p-10 text-white shadow-2xl overflow-hidden border border-emerald-400/30">
+            <!-- Background Decorative Badges -->
+            <div class="absolute -right-10 -bottom-10 text-white/10 text-9xl font-black">🎁</div>
+            
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8">
+                    <div class="inline-flex items-center gap-2 bg-amber-400 text-slate-950 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider mb-4 shadow-sm">
+                        🔥 PAKET PROMO BEST VALUE (HEMAT Rp 650.000)
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white">
+                        Paket Sekolah Digital Complete (5-in-1)
+                    </h2>
+                    <p class="text-emerald-100 text-sm mt-2 max-w-2xl">
+                        Dapatkan seluruh 5 sistem sekolah (CBT + LMS + E-Rapor + E-Presensi + E-Perpustakaan) sekaligus dengan harga grosir yang jauh lebih hemat.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6 text-xs text-white">
+                        <div class="bg-black/20 backdrop-blur-md p-2.5 rounded-xl border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-check text-amber-300"></i> CBT Ujian Online
+                        </div>
+                        <div class="bg-black/20 backdrop-blur-md p-2.5 rounded-xl border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-check text-amber-300"></i> LMS E-Learning
+                        </div>
+                        <div class="bg-black/20 backdrop-blur-md p-2.5 rounded-xl border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-check text-amber-300"></i> E-Rapor Sekolah
+                        </div>
+                        <div class="bg-black/20 backdrop-blur-md p-2.5 rounded-xl border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-check text-amber-300"></i> E-Presensi GPS
+                        </div>
+                        <div class="bg-black/20 backdrop-blur-md p-2.5 rounded-xl border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-check text-amber-300"></i> E-Perpustakaan
+                        </div>
+                        <div class="bg-black/20 backdrop-blur-md p-2.5 rounded-xl border border-white/10 flex items-center gap-2">
+                            <i class="fa-solid fa-star text-amber-300"></i> Gratis Setup Server
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 bg-slate-900/90 backdrop-blur-xl p-6 rounded-2xl border border-white/20 text-center">
+                    <span class="text-xs text-slate-400 line-through">Harga Normal: Rp 3.150.000</span>
+                    <div class="font-display text-3xl sm:text-4xl font-extrabold text-amber-400 my-1">
+                        Rp 2.500.000
+                    </div>
+                    <span class="text-[11px] text-emerald-300 font-semibold block mb-4">Sekali Bayar &bull; Full Source Code 5 Sistem</span>
+                    
+                    <a href="#" onclick="buyBundle()" class="w-full py-3.5 px-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg transition transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Ambil Paket Complete
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Produk Section -->
+    <section id="katalog" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-1">
+        
+        <!-- Header Katalog -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <span class="inline-block bg-brand-50 text-brand-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Pilihan Aplikasi Satuan</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">Katalog Sistem (Semua < Rp 800rb)</h2>
+            <p class="text-slate-500 mt-2 text-sm">Pilih sistem sesuai kebutuhan spesifik instansi atau sekolah Anda.</p>
+        </div>
+
+        <!-- Filter Pills & Search Bar -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 bg-white p-3 rounded-2xl border border-slate-200/80 shadow-sm">
+            <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+                <button onclick="setFilter('all')" class="filter-btn active text-xs font-bold px-4 py-2 rounded-xl transition bg-brand-600 text-white shadow-sm" data-category="all">
+                    ✨ Semua Sistem
+                </button>
+                <button onclick="setFilter('ujian')" class="filter-btn text-xs font-bold px-4 py-2 rounded-xl transition bg-slate-100 text-slate-600 hover:bg-slate-200" data-category="ujian">
+                    📝 Ujian & CBT
+                </button>
+                <button onclick="setFilter('elearning')" class="filter-btn text-xs font-bold px-4 py-2 rounded-xl transition bg-slate-100 text-slate-600 hover:bg-slate-200" data-category="elearning">
+                    💻 E-Learning
+                </button>
+                <button onclick="setFilter('akademik')" class="filter-btn text-xs font-bold px-4 py-2 rounded-xl transition bg-slate-100 text-slate-600 hover:bg-slate-200" data-category="akademik">
+                    🎓 Rapor
+                </button>
+                <button onclick="setFilter('operasional')" class="filter-btn text-xs font-bold px-4 py-2 rounded-xl transition bg-slate-100 text-slate-600 hover:bg-slate-200" data-category="operasional">
+                    📍 Presensi & Perpus
+                </button>
+            </div>
+
+            <div class="relative w-full md:w-72">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="Cari nama projek..." class="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 transition">
+            </div>
+        </div>
+
+        <!-- Product Cards Grid -->
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Produk 1: CBT Ujian Online (Rp 750.000) -->
+            <div class="product-card bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition duration-300 flex flex-col overflow-hidden" data-category="ujian">
+                <div class="relative h-48 bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 text-white/10 text-9xl font-black">📝</div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold tracking-wide">
+                            <i class="fa-solid fa-fire text-amber-300"></i> Best Seller
+                        </span>
+                        <span class="text-[10px] font-mono bg-black/30 backdrop-blur-md px-2 py-1 rounded-md">v1.0.0.a</span>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="font-display text-2xl font-bold">CBT Ujian Online</h3>
+                        <p class="text-xs text-emerald-100">Ujian Anti-Curang (Lock Screen Browser)</p>
+                    </div>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
+                            Platform ujian online anti-pindah tab. Acak soal & jawaban otomatis, support audio/gambar, serta rekap nilai langsung ke Excel.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Lock Screen Anti-Pindah Tab</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Import Soal dari Excel / Word Easy</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-slate-100 pt-4 mb-4">
+                            <span class="text-xs font-semibold text-slate-400">Harga Satuan</span>
+                            <span class="font-display text-2xl font-extrabold text-slate-900">Rp 750.000</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <button onclick="openModal('CBT Ujian Online', 'Rp 750.000', 'Platform Ujian Online dengan keamanan tinggi untuk Komputer & Smartphone.', ['Sistem Anti-Pindah Tab (Lock Browser)', 'Timer Ujian & Auto-Submit System', 'Import Soal dari Excel/Word Easy Format', 'Bank Soal Terstruktur per Mata Pelajaran', 'Cetak Kartu Ujian & Hasil Nilai Real-time'])" class="w-full py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+                                Detail Fitur
+                            </button>
+                            <a href="#" onclick="buyProduct('CBT Ujian Online', 'Rp 750.000')" class="w-full py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-1.5 transition shadow-sm">
+                                <i class="fa-brands fa-whatsapp"></i> Beli Projek
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 2: LMS E-Learning (Rp 700.000) -->
+            <div class="product-card bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition duration-300 flex flex-col overflow-hidden" data-category="elearning">
+                <div class="relative h-48 bg-gradient-to-br from-purple-600 via-violet-600 to-purple-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 text-white/10 text-9xl font-black">📚</div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold tracking-wide">
+                            <i class="fa-solid fa-laptop-code text-amber-300"></i> E-Learning
+                        </span>
+                        <span class="text-[10px] font-mono bg-black/30 backdrop-blur-md px-2 py-1 rounded-md">v1.0.0.a</span>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="font-display text-2xl font-bold">LMS E-Learning</h3>
+                        <p class="text-xs text-purple-100">Portal Kelas Digital & Tugas Online</p>
+                    </div>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
+                            Platform materi & pengumpulan tugas siswa. Guru dapat berbagi modul video/PDF, mengoreksi tugas, serta memberikan feedback.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Ruang Kelas Virtual & Materi Video/PDF</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Pengumpulan & Koreksi Tugas Online</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-slate-100 pt-4 mb-4">
+                            <span class="text-xs font-semibold text-slate-400">Harga Satuan</span>
+                            <span class="font-display text-2xl font-extrabold text-slate-900">Rp 700.000</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <button onclick="openModal('LMS E-Learning', 'Rp 700.000', 'Learning Management System untuk mengelola materi dan pengumpulan tugas online.', ['Embed Video YouTube/Materi PDF', 'Pengumpulan Tugas & Koreksi Guru', 'Rekap Keaktifan Pembelajaran Siswa', 'Notifikasi Tugas Baru', 'Support Format PDF, Word, & PPT'])" class="w-full py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+                                Detail Fitur
+                            </button>
+                            <a href="#" onclick="buyProduct('LMS E-Learning', 'Rp 700.000')" class="w-full py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-1.5 transition shadow-sm">
+                                <i class="fa-brands fa-whatsapp"></i> Beli Projek
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 3: E-rapor (Rp 650.000) -->
+            <div class="product-card bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition duration-300 flex flex-col overflow-hidden" data-category="akademik">
+                <div class="relative h-48 bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 text-white/10 text-9xl font-black">🎓</div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold tracking-wide">
+                            <i class="fa-solid fa-award text-amber-300"></i> Akademik
+                        </span>
+                        <span class="text-[10px] font-mono bg-black/30 backdrop-blur-md px-2 py-1 rounded-md">v1.0.0.a</span>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="font-display text-2xl font-bold">E-Rapor Sekolah</h3>
+                        <p class="text-xs text-blue-100">Cetak Rapor PDF (Kurikulum Merdeka & K13)</p>
+                    </div>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
+                            Pengelolaan nilai siswa terpadu. Olah nilai akhir, capaian kompetensi, leger nilai, hingga cetak rapor PDF siap bagi.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Support Kurikulum Merdeka & K13</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Fitur Export & Import Excel</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-slate-100 pt-4 mb-4">
+                            <span class="text-xs font-semibold text-slate-400">Harga Satuan</span>
+                            <span class="font-display text-2xl font-extrabold text-slate-900">Rp 650.000</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <button onclick="openModal('E-Rapor Sekolah', 'Rp 650.000', 'Sistem Manajemen Nilai & Laporan Hasil Belajar Siswa untuk Kurikulum Merdeka & K13.', ['Cetak Rapor Otomatis PDF', 'Multi-role User Access', 'Manajemen Capaian Pembelajaran', 'Export/Import Nilai Excel', 'Leger Nilai Lengkap per Kelas', 'Bantuan Instalasi Gratis'])" class="w-full py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+                                Detail Fitur
+                            </button>
+                            <a href="#" onclick="buyProduct('E-Rapor Sekolah', 'Rp 650.000')" class="w-full py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-1.5 transition shadow-sm">
+                                <i class="fa-brands fa-whatsapp"></i> Beli Projek
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 4: E-Presensi (Rp 550.000) -->
+            <div class="product-card bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition duration-300 flex flex-col overflow-hidden" data-category="operasional">
+                <div class="relative h-48 bg-gradient-to-br from-amber-500 via-orange-500 to-amber-700 p-6 flex flex-col justify-between text-white overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 text-white/10 text-9xl font-black">📍</div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold tracking-wide">
+                            <i class="fa-solid fa-location-dot text-amber-200"></i> Absensi GPS
+                        </span>
+                        <span class="text-[10px] font-mono bg-black/30 backdrop-blur-md px-2 py-1 rounded-md">v1.0.0.a</span>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="font-display text-2xl font-bold">E-Presensi Digital</h3>
+                        <p class="text-xs text-amber-100">Presensi GPS Selfie & QR Code</p>
+                    </div>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
+                            Presensi guru & siswa akurat berbasis lokasi GPS radius dan foto selfie, atau dengan scan kartu QR Code di gerbang sekolah.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Lock Geolocation GPS Radius</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Mode Scan Kartu QR Code</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-slate-100 pt-4 mb-4">
+                            <span class="text-xs font-semibold text-slate-400">Harga Satuan</span>
+                            <span class="font-display text-2xl font-extrabold text-slate-900">Rp 550.000</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <button onclick="openModal('E-Presensi Digital', 'Rp 550.000', 'Aplikasi Presensi Digital Guru & Siswa berbasis Geolocation GPS dan QR Code.', ['Presensi Selfie Koordinat GPS Radius', 'Generate Kartu QR Code Cetak Mandiri', 'Pengajuan Izin/Sakit Online + Surat Doc', 'Cetak Rekap Absensi Bulanan/Harian', 'Dashboard Monitoring Kehadiran Realtime'])" class="w-full py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+                                Detail Fitur
+                            </button>
+                            <a href="#" onclick="buyProduct('E-Presensi Digital', 'Rp 550.000')" class="w-full py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-1.5 transition shadow-sm">
+                                <i class="fa-brands fa-whatsapp"></i> Beli Projek
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 5: E-Perpustakaan (Rp 500.000) -->
+            <div class="product-card bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition duration-300 flex flex-col overflow-hidden" data-category="operasional">
+                <div class="relative h-48 bg-gradient-to-br from-cyan-600 via-blue-600 to-cyan-800 p-6 flex flex-col justify-between text-white overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 text-white/10 text-9xl font-black">📖</div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold tracking-wide">
+                            <i class="fa-solid fa-book-open text-amber-300"></i> Perpustakaan
+                        </span>
+                        <span class="text-[10px] font-mono bg-black/30 backdrop-blur-md px-2 py-1 rounded-md">v1.0.0.a</span>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="font-display text-2xl font-bold">E-Perpustakaan</h3>
+                        <p class="text-xs text-cyan-100">Sirkulasi Pinjam & Baca E-Book PDF</p>
+                    </div>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5">
+                            Katalog digital OPAC, barcode peminjaman buku fisik, denda telat otomatis, serta fitur pembaca buku digital (E-Book PDF).
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-600">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Katalog Digital OPAC & E-Book PDF</div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Cetak Label & Barcode Buku</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-slate-100 pt-4 mb-4">
+                            <span class="text-xs font-semibold text-slate-400">Harga Satuan</span>
+                            <span class="font-display text-2xl font-extrabold text-slate-900">Rp 500.000</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <button onclick="openModal('E-Perpustakaan', 'Rp 500.000', 'Sistem Manajemen Katalog dan Sirkulasi Peminjaman Buku Sekolah.', ['Cetak Label Kode & Barcode Buku', 'Katalog Digital Online (OPAC)', 'Sirkulasi Transaksi Pinjam & Kembali', 'Hitung Denda Otomatis Terlambat', 'Dukungan Upload & Baca E-Book PDF'])" class="w-full py-2.5 px-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+                                Detail Fitur
+                            </button>
+                            <a href="#" onclick="buyProduct('E-Perpustakaan', 'Rp 500.000')" class="w-full py-2.5 px-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-1.5 transition shadow-sm">
+                                <i class="fa-brands fa-whatsapp"></i> Beli Projek
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Request Custom Web Section -->
+    <section id="request-custom" class="py-16 bg-gradient-to-r from-slate-900 via-brand-900 to-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-8 sm:p-12 backdrop-blur-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-4 flex flex-col items-center text-center bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-amber-400 to-emerald-400 p-1 mb-4 shadow-lg">
+                        <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center font-display font-black text-2xl text-amber-300">
+                            👨‍💻
+                        </div>
+                    </div>
+                    <h4 class="font-display font-bold text-lg text-white">Riyan Gilang Pratama</h4>
+                    <p class="text-xs text-amber-300 font-medium mb-3">Full-Stack Web Developer</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        "Saya siap merealisasikan pembuatan website khusus (Sekolah, Toko Online, SIM, dll) sesuai kebutuhan Anda."
+                    </p>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <span class="bg-amber-400/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Layanan Kustomisasi Web</span>
+                    <h2 class="font-display text-3xl font-extrabold mt-3 mb-4 text-white">Menerima Request Website Sekolah & Web Custom Lainnya</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Butuh Web Profil Sekolah, Portal PPDB Online, Toko Online, Sistem POS, atau Integrasi Payment Gateway? Silakan diskusikan kebutuhan Anda secara langsung via WhatsApp.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-semibold text-slate-200 mb-8">
+                        <div class="bg-white/5 p-3 rounded-xl border border-white/5 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-emerald-400 text-base"></i> Website Profil Sekolah
+                        </div>
+                        <div class="bg-white/5 p-3 rounded-xl border border-white/5 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-emerald-400 text-base"></i> Sistem PPDB / PMB Online
+                        </div>
+                        <div class="bg-white/5 p-3 rounded-xl border border-white/5 flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-emerald-400 text-base"></i> Website Custom Sesuai Ide
+                        </div>
+                    </div>
+
+                    <a href="#" onclick="requestCustomWeb()" class="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-600/20 transition transform hover:-translate-y-0.5 text-sm sm:text-base">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Diskusi & Request Website Custom</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <span class="text-brand-600 font-bold text-xs uppercase tracking-wider">Pertanyaan Umum</span>
+                <h2 class="font-display text-3xl font-extrabold text-slate-900 mt-1">FAQ Pemesanan</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question text-brand-500"></i> Mengapa Harganya Sangat Terjangkau?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                        Kami ingin mendukung digitalisasi sekolah di Indonesia secara merata. Produk dijual langsung oleh pengembang utama (Riyan Gilang Pratama) tanpa perantara agen/perusahaan.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question text-brand-500"></i> Bagaimana Keuntungan Membeli Paket Bundling 2,5 Juta?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                        Anda langsung mendapatkan 5 sistem sekolah sekaligus (CBT, LMS, Rapor, Presensi, Perpus) dengan hemat Rp 650.000 dibanding membeli per sistem secara terpisah.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-circle-question text-brand-500"></i> Apakah Dibantu Sampai Online di Server Sekolah?
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                        Ya! Setiap pembelian sudah termasuk bantuan pendampingan setup ke hosting/VPS sekolah Anda secara gratis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl transform transition-all border border-slate-100">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <span id="modal-price" class="text-xs font-display font-extrabold text-emerald-600 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full"></span>
+                    <h3 id="modal-title" class="font-display text-2xl font-bold text-slate-900 mt-2"></h3>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-full hover:bg-slate-100 transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <p id="modal-desc" class="text-slate-600 text-xs sm:text-sm mb-6 leading-relaxed"></p>
+            
+            <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-3 text-brand-600">Daftar Fitur Unggulan:</h4>
+            <ul id="modal-features" class="space-y-2.5 text-xs sm:text-sm text-slate-600 mb-8 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+            </ul>
+
+            <div class="flex gap-3 pt-2">
+                <button onclick="closeModal()" class="w-1/2 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition">
+                    Tutup
+                </button>
+                <a id="modal-buy-btn" href="#" target="_blank" class="w-1/2 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-600/20">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Beli via WA
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Action Button -->
+    <a href="#" onclick="requestCustomWeb()" class="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-emerald-500 to-teal-600 text-white p-4 rounded-full shadow-2xl shadow-emerald-600/40 hover:scale-110 transition duration-300 flex items-center justify-center group" title="Hubungi via WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out text-xs font-bold pl-0 group-hover:pl-2">
+            Konsultasi WA
+        </span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-2 mb-3">
+                <div class="bg-brand-600 text-white p-2 rounded-xl">
+                    <i class="fa-solid fa-graduation-cap text-lg"></i>
+                </div>
+                <span class="font-display text-2xl font-bold text-white tracking-tight">Jasa<span class="text-brand-500">Digital</span></span>
+            </div>
+            <p class="text-xs text-slate-400 max-w-md mx-auto mb-3">
+                Dikembangkan oleh <strong class="text-white">Riyan Gilang Pratama</strong>. Solusi Perangkat Lunak & Sistem Informasi Pendidikan Indonesia.
+            </p>
+            <p class="text-xs font-mono text-slate-500 mb-6">Versi Aplikasi: 1.0.0.a &bull; WhatsApp: +62 858-1456-5300</p>
+            <p class="text-[11px] text-slate-600">&copy; 2026 JasaDigital oleh Riyan Gilang Pratama. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.getElementById('btn-nav-wa').href = `https://wa.me/${WA_NUMBER}?text=Halo%20Riyan%20Gilang%20Pratama,%20saya%20tertarik%20dengan%20sistem%20sekolah%20di%20JasaDigital.`;
+
+        function requestCustomWeb() {
+            const text = `Halo Riyan Gilang Pratama (JasaDigital),\nSaya ingin konsultasi / request pembuatan website custom (Website Sekolah / Web lainnya).`;
+            window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function buyProduct(title, price) {
+            const text = `Halo Riyan Gilang Pratama, saya berminat membeli produk satuan: *${title}* (${price}) [v${SYSTEM_VERSION}]. Mohon informasi rekening pembayaran & pengiriman filenya.`;
+            window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function buyBundle() {
+            const text = `Halo Riyan Gilang Pratama, saya ingin mengambil *PAKET BUNDLING COMPLETE 5 SISTEM* (Rp 2.500.000). Mohon panduan transaksi dan bantuan setupnya.`;
+            window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function setFilter(category) {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.classList.add('bg-brand-600', 'text-white', 'shadow-sm');
+                    btn.classList.remove('bg-slate-100', 'text-slate-600');
+                } else {
+                    btn.classList.remove('bg-brand-600', 'text-white', 'shadow-sm');
+                    btn.classList.add('bg-slate-100', 'text-slate-600');
+                }
+            });
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        function filterProducts() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const desc = card.querySelector('p').innerText.toLowerCase();
+                if (title.includes(input) || desc.includes(input)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        function openModal(title, price, desc, features) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-price').innerText = price;
+            document.getElementById('modal-desc').innerText = desc;
+
+            const featuresList = document.getElementById('modal-features');
+            featuresList.innerHTML = '';
+            features.forEach(feat => {
+                const li = document.createElement('li');
+                li.className = "flex items-center gap-2";
+                li.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 shrink-0"></i> <span>${feat}</span>`;
+                featuresList.appendChild(li);
+            });
+
+            const buyBtn = document.getElementById('modal-buy-btn');
+            buyBtn.onclick = function() {
+                buyProduct(title, price);
+            };
+
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
